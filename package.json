@@ -1,0 +1,36 @@
+{
+  "name": "creative-asset-manager",
+  "version": "1.0.0",
+  "description": "A Creative Cloud-style asset management app for design teams",
+  "main": "src/api/server.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "node src/api/server.js",
+    "client": "react-scripts start",
+    "build": "react-scripts build",
+    "seed": "node src/db/seed.js",
+    "test": "react-scripts test"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "multer": "^2.0.1",
+    "uuid": "^9.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "concurrently": "^8.2.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

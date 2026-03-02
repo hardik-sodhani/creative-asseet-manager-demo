@@ -1,0 +1,34 @@
+# Adobe Creative Asset Manager - Cursor Rules
+# These rules ensure consistent, high-quality code across the team.
+
+## Code Style & Naming
+- Use TypeScript-style JSDoc annotations on all functions
+- Use camelCase for variables and functions, PascalCase for React components
+- Prefix all custom hooks with "use" (e.g., useAssets, useSearch)
+- Prefer const over let; never use var
+- Use descriptive variable names — no single-letter variables except in loops
+
+## React Conventions
+- Use functional components with hooks exclusively — no class components
+- Keep components under 150 lines; extract logic into custom hooks
+- All components must have PropTypes or JSDoc type annotations
+- Use semantic HTML elements (article, section, nav) over generic divs
+- Handle loading, error, and empty states in every data-fetching component
+
+## API & Data Handling
+- All API calls must include try/catch error handling
+- Return consistent response shapes: { success: boolean, data?: any, error?: string }
+- Validate all request parameters on the server side before processing
+- Use parameterized queries for all database operations — never concatenate SQL strings
+- Log errors server-side but never expose internal details to the client
+
+## Security
+- Never log sensitive data, API keys, or user credentials
+- Sanitize all user inputs before database insertion
+- Use CORS with explicit origin allowlists in production
+- File uploads must validate file type and enforce size limits
+
+## Performance
+- Memoize expensive computations with useMemo
+- Debounce search inputs to avoid excessive API calls
+- Use pagination for list endpoints — never return unbounded results

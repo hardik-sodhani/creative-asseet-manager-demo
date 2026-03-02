@@ -1,0 +1,218 @@
+{
+  "assets": [
+    {
+      "id": "fe4241ad-886c-4e07-9f02-a54ad5c5cd0d",
+      "name": "Hero Banner - Spring Campaign",
+      "fileType": "psd",
+      "fileSize": 45000000,
+      "thumbnailUrl": null,
+      "uploadedBy": "Sarah Chen",
+      "createdAt": "2024-01-15T10:30:00Z",
+      "updatedAt": "2024-02-01T14:22:00Z"
+    },
+    {
+      "id": "d123f1d1-c55f-4d56-a8a6-fd7e32449bb6",
+      "name": "Brand Logo - Dark Variant",
+      "fileType": "ai",
+      "fileSize": 2400000,
+      "thumbnailUrl": null,
+      "uploadedBy": "Marcus Johnson",
+      "createdAt": "2024-01-10T09:00:00Z",
+      "updatedAt": "2024-01-28T11:15:00Z"
+    },
+    {
+      "id": "c6c9bfa3-f60e-408b-9b1b-1544f85dd1ab",
+      "name": "Icon Set - Creative Cloud",
+      "fileType": "svg",
+      "fileSize": 850000,
+      "thumbnailUrl": null,
+      "uploadedBy": "Priya Patel",
+      "createdAt": "2024-01-20T13:45:00Z",
+      "updatedAt": "2024-02-05T16:30:00Z"
+    },
+    {
+      "id": "daf15ce6-f31b-43d1-90c2-bf812b5aebc7",
+      "name": "Product Screenshot - Lightroom",
+      "fileType": "png",
+      "fileSize": 8900000,
+      "thumbnailUrl": null,
+      "uploadedBy": "David Kim",
+      "createdAt": "2024-02-01T08:00:00Z",
+      "updatedAt": "2024-02-03T10:45:00Z"
+    },
+    {
+      "id": "d5507525-a19d-412e-980d-c3e398394fd5",
+      "name": "Mobile App Prototype - Express",
+      "fileType": "xd",
+      "fileSize": 15600000,
+      "thumbnailUrl": null,
+      "uploadedBy": "Elena Rodriguez",
+      "createdAt": "2024-01-25T15:20:00Z",
+      "updatedAt": "2024-02-04T09:10:00Z"
+    },
+    {
+      "id": "c081da3a-2c75-402e-b891-4c699affb74c",
+      "name": "Typography Guide - Brand Standards",
+      "fileType": "pdf",
+      "fileSize": 3200000,
+      "thumbnailUrl": null,
+      "uploadedBy": "Sarah Chen",
+      "createdAt": "2024-01-05T11:00:00Z",
+      "updatedAt": "2024-01-05T11:00:00Z"
+    },
+    {
+      "id": "bfb38515-021c-40f6-9d2d-96f62b4ee735",
+      "name": "Social Media Templates - Q1",
+      "fileType": "psd",
+      "fileSize": 28000000,
+      "thumbnailUrl": null,
+      "uploadedBy": "Marcus Johnson",
+      "createdAt": "2024-01-18T14:30:00Z",
+      "updatedAt": "2024-02-02T08:45:00Z"
+    },
+    {
+      "id": "ff249c2a-656f-413c-be80-58cc80d45870",
+      "name": "Color Palette - Accessibility Update",
+      "fileType": "svg",
+      "fileSize": 120000,
+      "thumbnailUrl": null,
+      "uploadedBy": "Priya Patel",
+      "createdAt": "2024-02-06T10:00:00Z",
+      "updatedAt": "2024-02-06T10:00:00Z"
+    }
+  ],
+  "tags": [
+    {
+      "assetId": "fe4241ad-886c-4e07-9f02-a54ad5c5cd0d",
+      "tag": "hero-image"
+    },
+    {
+      "assetId": "fe4241ad-886c-4e07-9f02-a54ad5c5cd0d",
+      "tag": "campaign-spring"
+    },
+    {
+      "assetId": "fe4241ad-886c-4e07-9f02-a54ad5c5cd0d",
+      "tag": "photoshop"
+    },
+    {
+      "assetId": "fe4241ad-886c-4e07-9f02-a54ad5c5cd0d",
+      "tag": "marketing"
+    },
+    {
+      "assetId": "d123f1d1-c55f-4d56-a8a6-fd7e32449bb6",
+      "tag": "logo"
+    },
+    {
+      "assetId": "d123f1d1-c55f-4d56-a8a6-fd7e32449bb6",
+      "tag": "brand"
+    },
+    {
+      "assetId": "d123f1d1-c55f-4d56-a8a6-fd7e32449bb6",
+      "tag": "illustrator"
+    },
+    {
+      "assetId": "d123f1d1-c55f-4d56-a8a6-fd7e32449bb6",
+      "tag": "dark-mode"
+    },
+    {
+      "assetId": "c6c9bfa3-f60e-408b-9b1b-1544f85dd1ab",
+      "tag": "icons"
+    },
+    {
+      "assetId": "c6c9bfa3-f60e-408b-9b1b-1544f85dd1ab",
+      "tag": "creative-cloud"
+    },
+    {
+      "assetId": "c6c9bfa3-f60e-408b-9b1b-1544f85dd1ab",
+      "tag": "ui"
+    },
+    {
+      "assetId": "c6c9bfa3-f60e-408b-9b1b-1544f85dd1ab",
+      "tag": "vector"
+    },
+    {
+      "assetId": "daf15ce6-f31b-43d1-90c2-bf812b5aebc7",
+      "tag": "screenshot"
+    },
+    {
+      "assetId": "daf15ce6-f31b-43d1-90c2-bf812b5aebc7",
+      "tag": "lightroom"
+    },
+    {
+      "assetId": "daf15ce6-f31b-43d1-90c2-bf812b5aebc7",
+      "tag": "product"
+    },
+    {
+      "assetId": "daf15ce6-f31b-43d1-90c2-bf812b5aebc7",
+      "tag": "documentation"
+    },
+    {
+      "assetId": "d5507525-a19d-412e-980d-c3e398394fd5",
+      "tag": "prototype"
+    },
+    {
+      "assetId": "d5507525-a19d-412e-980d-c3e398394fd5",
+      "tag": "mobile"
+    },
+    {
+      "assetId": "d5507525-a19d-412e-980d-c3e398394fd5",
+      "tag": "adobe-xd"
+    },
+    {
+      "assetId": "d5507525-a19d-412e-980d-c3e398394fd5",
+      "tag": "ux"
+    },
+    {
+      "assetId": "c081da3a-2c75-402e-b891-4c699affb74c",
+      "tag": "typography"
+    },
+    {
+      "assetId": "c081da3a-2c75-402e-b891-4c699affb74c",
+      "tag": "brand"
+    },
+    {
+      "assetId": "c081da3a-2c75-402e-b891-4c699affb74c",
+      "tag": "guide"
+    },
+    {
+      "assetId": "c081da3a-2c75-402e-b891-4c699affb74c",
+      "tag": "standards"
+    },
+    {
+      "assetId": "bfb38515-021c-40f6-9d2d-96f62b4ee735",
+      "tag": "social-media"
+    },
+    {
+      "assetId": "bfb38515-021c-40f6-9d2d-96f62b4ee735",
+      "tag": "templates"
+    },
+    {
+      "assetId": "bfb38515-021c-40f6-9d2d-96f62b4ee735",
+      "tag": "photoshop"
+    },
+    {
+      "assetId": "bfb38515-021c-40f6-9d2d-96f62b4ee735",
+      "tag": "marketing"
+    },
+    {
+      "assetId": "bfb38515-021c-40f6-9d2d-96f62b4ee735",
+      "tag": "q1"
+    },
+    {
+      "assetId": "ff249c2a-656f-413c-be80-58cc80d45870",
+      "tag": "colors"
+    },
+    {
+      "assetId": "ff249c2a-656f-413c-be80-58cc80d45870",
+      "tag": "accessibility"
+    },
+    {
+      "assetId": "ff249c2a-656f-413c-be80-58cc80d45870",
+      "tag": "a11y"
+    },
+    {
+      "assetId": "ff249c2a-656f-413c-be80-58cc80d45870",
+      "tag": "design-system"
+    }
+  ]
+}
