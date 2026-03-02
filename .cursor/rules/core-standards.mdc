@@ -1,0 +1,37 @@
+---
+description: Core coding and architecture standards for Creative Asset Manager
+alwaysApply: true
+---
+
+# Creative Asset Manager Rules
+
+Use these rules for all changes in this repository.
+
+## Code quality
+- Prefer small, focused changes; do not refactor unrelated code.
+- Use `const` by default; use `let` only when reassignment is required; never use `var`.
+- Use descriptive names (`assetId`, `searchQuery`) instead of single-letter variables.
+- Add JSDoc for non-trivial functions and public helpers.
+
+## Frontend (React)
+- Use functional components and hooks; do not introduce class components.
+- Handle loading, error, and empty states in data-driven UI.
+- Use semantic HTML where practical for structure and accessibility.
+- Keep components readable; extract reusable logic into custom hooks.
+
+## API and database
+- Wrap network and DB operations with clear error handling.
+- Keep API responses consistent: `{ success, data?, error? }`.
+- Validate inputs before processing on server-side paths.
+- Use parameterized queries only; never build SQL via string concatenation.
+
+## Security and reliability
+- Never log secrets, tokens, credentials, or sensitive user data.
+- Sanitize and validate user-controlled input before persistence.
+- Keep error messages safe for clients; log internal diagnostics server-side.
+- Add pagination or limits for list endpoints that can grow large.
+
+## Working style
+- Prefer updating existing files over introducing new abstractions.
+- Reuse patterns in `src/api/`, `src/db/`, and `src/utils/` before creating new ones.
+- When uncertain, choose the simplest implementation that is easy to test and maintain.
