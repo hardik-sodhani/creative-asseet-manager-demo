@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { debounce } from '../utils/debounce';
 
 /**
@@ -10,17 +10,18 @@ import { debounce } from '../utils/debounce';
  */
 function SearchBar({ onSearch }) {
   const [inputValue, setInputValue] = useState('');
+  const onSearchRef = useRef(onSearch);
+  onSearchRef.current = onSearch;
 
-  /**
-   * Debounced version of onSearch to limit API requests.
-   * Waits 300ms after the user stops typing before triggering.
-   */
-  const debouncedSearch = useCallback(
+  const debouncedSearchRef = useRef(
     debounce((query) => {
-      onSearch(query);
-    }, 300),
-    [onSearch]
+      onSearchRef.current(query);
+    }, 300)
   );
+
+  useEffect(() => {
+    return () => debouncedSearchRef.current.cancel();
+  }, []);
 
   /**
    * Handle input change — update local state immediately for responsive UI,
@@ -30,7 +31,7 @@ function SearchBar({ onSearch }) {
   const handleChange = (event) => {
     const query = event.target.value;
     setInputValue(query);
-    debouncedSearch(query);
+    debouncedSearchRef.current(query);
   };
 
   /**

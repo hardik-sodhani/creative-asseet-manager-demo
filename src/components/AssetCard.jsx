@@ -56,10 +56,10 @@ function AssetCard({ asset, onClick }) {
         <p className="asset-meta">
           {formatFileSize(fileSize)} · Updated {formatRelativeDate(updatedAt)}
         </p>
-        {tags.length > 0 && (
+        {tags && tags.length > 0 && (
           <ul className="asset-tags" aria-label="Tags">
-            {tags.slice(0, 3).map((tag) => (
-              <li key={tag} className="tag">{tag}</li>
+            {tags.slice(0, 3).map((tag, index) => (
+              <li key={`${tag}-${index}`} className="tag">{tag}</li>
             ))}
             {tags.length > 3 && (
               <li className="tag tag-more">+{tags.length - 3}</li>

@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useCallback, useEffect } from 'react';
 import SearchBar from './SearchBar';
 import AssetGrid from './AssetGrid';
 import AssetUploader from './AssetUploader';
@@ -18,14 +18,22 @@ function App() {
 
   const { assets, isLoading, error, refetch } = useAssets(searchQuery);
 
+  useEffect(() => {
+    setSelectedAsset((prev) => {
+      if (!prev) return prev;
+      const updated = assets.find((a) => a.id === prev.id);
+      return updated || null;
+    });
+  }, [assets]);
+
   /**
    * Handle search input changes with the current query string.
    * @param {string} query - The search term entered by the user
    */
-  const handleSearch = (query) => {
+  const handleSearch = useCallback((query) => {
     setSearchQuery(query);
     setSelectedAsset(null);
-  };
+  }, []);
 
   /**
    * Handle successful asset upload by refreshing the asset list.

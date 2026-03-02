@@ -38,13 +38,18 @@ export async function fetchAssets(query = '', page = 1, limit = 20) {
  */
 export async function uploadAsset(file, tags = []) {
   try {
-    const formData = new FormData();
-    formData.append('file', file);
-    formData.append('tags', JSON.stringify(tags));
+    const extension = file.name.split('.').pop().toLowerCase();
 
     const response = await fetch(`${API_BASE_URL}/assets`, {
       method: 'POST',
-      body: formData,
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: file.name,
+        fileType: extension,
+        fileSize: file.size,
+        tags,
+        uploadedBy: 'Current User',
+      }),
     });
 
     const result = await response.json();

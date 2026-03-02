@@ -19,12 +19,13 @@ const router = express.Router();
 router.get('/', (req, res) => {
   try {
     const { query, page = 1, limit = 20 } = req.query;
-    const pageNum = Math.max(1, parseInt(page, 10));
-    const limitNum = Math.min(100, Math.max(1, parseInt(limit, 10)));
+    const queryStr = Array.isArray(query) ? query[0] || '' : query || '';
+    const pageNum = Math.max(1, parseInt(page, 10)) || 1;
+    const limitNum = Math.min(100, Math.max(1, parseInt(limit, 10))) || 20;
     const offset = (pageNum - 1) * limitNum;
 
-    const assets = query
-      ? searchAssets(query, limitNum, offset)
+    const assets = queryStr
+      ? searchAssets(queryStr, limitNum, offset)
       : getAllAssets(limitNum, offset);
 
     res.json({
@@ -82,13 +83,21 @@ router.post('/', (req, res) => {
       });
     }
 
+    const parsedSize = parseInt(fileSize, 10);
+    if (isNaN(parsedSize) || parsedSize < 0) {
+      return res.status(400).json({
+        success: false,
+        error: 'fileSize must be a valid non-negative number.',
+      });
+    }
+
     const newAsset = {
       id: uuidv4(),
-      name: name.trim(),
-      fileType: fileType.toLowerCase().trim(),
-      fileSize: parseInt(fileSize, 10),
+      name: String(name).trim(),
+      fileType: String(fileType).toLowerCase().trim(),
+      fileSize: parsedSize,
       thumbnailUrl: thumbnailUrl || null,
-      tags: Array.isArray(tags) ? tags : [],
+      tags: Array.isArray(tags) ? tags.filter((t) => typeof t === 'string') : [],
       uploadedBy: uploadedBy || 'Unknown',
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
@@ -121,10 +130,15 @@ router.patch('/:id', (req, res) => {
       });
     }
 
-    const updates = {
-      ...req.body,
-      updatedAt: new Date().toISOString(),
-    };
+    const { name: newName, tags: newTags } = req.body;
+    const updates = { updatedAt: new Date().toISOString() };
+
+    if (newName !== undefined) {
+      updates.name = String(newName).trim();
+    }
+    if (newTags !== undefined) {
+      updates.tags = Array.isArray(newTags) ? [...new Set(newTags.filter((t) => typeof t === 'string'))] : [];
+    }
 
     const updatedAsset = updateAsset(id, updates);
     res.json({ success: true, data: updatedAsset });

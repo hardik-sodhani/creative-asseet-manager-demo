@@ -79,10 +79,10 @@ function searchAssets(query, limit = 20, offset = 0) {
   const lowerQuery = query.toLowerCase();
 
   const matches = db.assets.filter((asset) => {
-    const nameMatch = asset.name.toLowerCase().includes(lowerQuery);
-    const typeMatch = asset.fileType.toLowerCase().includes(lowerQuery);
+    const nameMatch = (asset.name || '').toLowerCase().includes(lowerQuery);
+    const typeMatch = (asset.fileType || '').toLowerCase().includes(lowerQuery);
     const tags = getTagsForAsset(asset.id);
-    const tagMatch = tags.some((tag) => tag.toLowerCase().includes(lowerQuery));
+    const tagMatch = tags.some((tag) => (tag || '').toLowerCase().includes(lowerQuery));
     return nameMatch || typeMatch || tagMatch;
   });
 

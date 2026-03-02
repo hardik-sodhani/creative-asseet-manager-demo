@@ -40,7 +40,7 @@ function AssetDetail({ asset, onClose, onUpdate }) {
       return;
     }
 
-    if (asset.tags.includes(trimmedTag)) {
+    if ((asset.tags || []).includes(trimmedTag)) {
       setSaveError('This tag already exists');
       return;
     }
@@ -49,7 +49,7 @@ function AssetDetail({ asset, onClose, onUpdate }) {
     setSaveError(null);
 
     try {
-      const updatedTags = [...asset.tags, trimmedTag];
+      const updatedTags = [...(asset.tags || []), trimmedTag];
       await updateAsset(asset.id, { tags: updatedTags });
       setNewTag('');
       onUpdate();
@@ -69,7 +69,7 @@ function AssetDetail({ asset, onClose, onUpdate }) {
     setSaveError(null);
 
     try {
-      const updatedTags = asset.tags.filter((tag) => tag !== tagToRemove);
+      const updatedTags = (asset.tags || []).filter((tag) => tag !== tagToRemove);
       await updateAsset(asset.id, { tags: updatedTags });
       onUpdate();
     } catch (error) {
@@ -129,8 +129,8 @@ function AssetDetail({ asset, onClose, onUpdate }) {
         <section className="detail-tags">
           <h3>Tags</h3>
           <ul className="tag-list">
-            {asset.tags.map((tag) => (
-              <li key={tag} className="tag tag-removable">
+            {(asset.tags || []).map((tag, index) => (
+              <li key={`${tag}-${index}`} className="tag tag-removable">
                 {tag}
                 <button
                   onClick={() => handleRemoveTag(tag)}

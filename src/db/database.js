@@ -14,10 +14,22 @@ let store = null;
 function getDatabase() {
   if (!store) {
     if (fs.existsSync(DB_PATH)) {
-      const raw = fs.readFileSync(DB_PATH, 'utf-8');
-      store = JSON.parse(raw);
+      try {
+        const raw = fs.readFileSync(DB_PATH, 'utf-8');
+        store = JSON.parse(raw);
+      } catch (parseError) {
+        console.error('Failed to parse assets.json, resetting to empty store:', parseError.message);
+        store = { assets: [], tags: [] };
+      }
     } else {
       store = { assets: [], tags: [] };
+    }
+
+    if (!Array.isArray(store.assets)) {
+      store.assets = [];
+    }
+    if (!Array.isArray(store.tags)) {
+      store.tags = [];
     }
   }
   return store;

@@ -4,6 +4,10 @@
  * @returns {string} Formatted string (e.g., "4.5 MB", "850 KB")
  */
 export function formatFileSize(bytes) {
+  if (bytes == null || isNaN(bytes) || bytes < 0) {
+    return '0 B';
+  }
+
   if (bytes === 0) {
     return '0 B';
   }
@@ -24,6 +28,10 @@ export function formatFileSize(bytes) {
  */
 export function formatRelativeDate(isoDateString) {
   const date = new Date(isoDateString);
+  if (isNaN(date.getTime())) {
+    return 'Unknown';
+  }
+
   const now = new Date();
   const diffMs = now - date;
   const diffSeconds = Math.floor(diffMs / 1000);
